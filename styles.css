@@ -1,13 +1,14 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: linear-gradient(to bottom, #fd297b, #ff5864);
 }
+
 
 .card {
   width: 300px;
