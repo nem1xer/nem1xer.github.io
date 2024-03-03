@@ -9,46 +9,80 @@ body {
   background: linear-gradient(to bottom, #fd297b, #ff5864);
 }
 
-
-.card {
+.card-container {
+  position: relative;
   width: 300px;
   height: 400px;
+}
+
+.card {
+  position: absolute;
   background-color: #ffffff;
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
+  text-align: center;
+  padding: 20px;
+  transition: opacity 0.5s ease;
+}
+
+.slide-out-left {
+  animation: slideOutLeft 0.5s forwards;
+}
+
+.slide-out-right {
+  animation: slideOutRight 0.5s forwards;
 }
 
 .card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .buttons {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
+  margin-top: 20px;
 }
 
-.buttons button {
+button {
   padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 20px;
   border: none;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
   outline: none;
 }
 
-#like {
-  background-color: #4caf50;
-  color: #fff;
+#nope {
+  background-color: #FF5733;
+  color: white;
+  margin-right: 10px;
 }
 
-#nope {
-  background-color: #f44336;
-  color: #fff;
+#like {
+  background-color: #4CAF50;
+  color: white;
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }
